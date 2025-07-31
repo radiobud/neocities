@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boot Camp</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/aunostyle.css" rel="stylesheet" type="text/css" media="all">
+
+ <script>
+ function changeBG() {
+   var selectedBGColor = document.getElementById("bgchoice").value;
+   document.body.style.backgroundColor = selectedBGColor;
+}
+
+/*
+const lightButton = document.getElementById("lightButton");
+*/
+
+function lightsOut() {
+ document.getElementById('light1').style.backgroundColor = "Black";
+ document.getElementById('lightfix').innerHTML = "&#9889; Turn ON the lights? &#9889;";
+ document.getElementById('lightfix').style.display = "inline";
+ document.getElementById('lightClick').play();
+}
+
+function lightsOn() {
+  document.getElementById('light1').style.backgroundColor = "linen";
+  document.getElementById('lightfix').style.display = "none";
+  document.getElementById('lightClick').play();
+}
+
+//Sal Fact Drop-Down result generator
+function salFact() {
+  let selectedFact = document.getElementById("Sal").value;
+  document.getElementById(selectedFact).style.display = "inline";
+  var crinkle = document.getElementById("paper");
+  crinkle.play();
+}
+
+//Actual converter
+function toCelsius(f) {
+  return (5/9) * (f-32);
+}
+
+//Temperature conversion box
+function liveFtoC() {
+  let yourtemp = document.getElementById('converter').value;
+  let newtemp = toCelsius(yourtemp);
+document.getElementById("answerC").innerHTML = Math.round(newtemp) + " degrees Celsius";
+}
+
+//silly Forsooth generator:
+function shakes() {
+  let shakesText = document.getElementById('shakesInput').value;
+  document.getElementById('classy').innerHTML = shakesText + " forsooth!";
+}
+
+//creating the array maybe - still not there
+/*if I make this array of ID values and name the ARRAY focus... maybe I can make a function
+that uses a given focus element as its argument.}
+
+const cards = ['temp', 'sal', 'storytime', 'bgSelector', 'forsooth', 'diary'];
+
+//for (let i=0, i < cards.length, i++) {
+ //   document.getElementById(i).addEventListener('mouseover', highlight)
+  }
+*/
+  
+//alternate way?
+/*
+for (let x in cards) {
+  document.getElementById(cards[x]).addEventListener('mouseover', highlight() {
+    document.getElementById(cards[x]).style.backgroundColor = "hotpink";
+  }
+};
+*/
+
+/*
+function highlight() {
+  document.getElementById(cards[x]).style.backgroundColor = "hotpink";
+}
+*/
+
+function lowlight() {
+  document.getElementById('storytime').style.backgroundColor = "linen";
+}
+
+let w=1;
+let y="Once upon a time in a far-off kingdom there lived a little girl, a sad young lad, and a childless baker, with his wife.";
+
+function storyGrow() { 
+w+=1;
+document.getElementById('story').innerHTML = y.slice(0,w);
+}
+
+function paperNoise() {
+  var crinkle = document.getElementById("paper");
+  crinkle.play();
+}
+
+
+/*
+function storyGrow() {
+let x = 20;
+x++;
+let story = document.getElementById('theStory').innerHTML;
+let revealedWords = story.slice(0,x);
+document.getElementById('revealedStory').innerHTML = revealedWords;
+}
+
+document.getElementById('revealedStory').addEventListener('mousemove', storyGrow);
+*/
+
+//EXAMPLES FROM W3
+/*
+document.getElementById("demo").onmouseover = function() {mouseOver()};
+document.getElementById("demo").onmouseout = function() {mouseOut()};
+
+function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "black";
+}
+*/
+</script>
+
+<style>
+
+body{
+background: lavender;
+font-family: Garamond, "Times New Roman", serif;
+color: black;
+text-align: center;
+display:flex;
+flex-flow:column wrap;
+justify-content:center;
+gap:30px;
+transition: background-color 2s;
+}
+
+h1{
+border: 5px ridge pink;
+text-shadow: 2px 2px 4px navy;
+max-width:300px;
+margin:auto;
+background-color:linen;
+}
+
+div {
+  display:flex;
+  flex-flow: row wrap;
+  flex: 1 0 300px;
+  justify-content:center;
+  align-items: flex-start;
+}
+
+.paper {
+  background-image: url("art_files/notebook paper.png");
+}
+
+#sal {
+  grid-row: span 2;
+}
+
+#book {
+  max-width: fit-content;
+  background-color: lightgrey;
+  border: 2px dotted black;
+  padding: 0px;
+  text-align:center;
+  margin:auto;
+}
+
+#book:hover {
+  transform: scale(1.25);
+  transition: 2s ease-in-out;
+}
+
+section {
+width: 300px;
+border: 4px ridge navy;
+border-radius: 10px;
+padding: 20px 40px;
+margin: 20px;
+background-color: linen;
+font-size: 1.2em;
+transition: background-color 0.25s;
+}
+
+.fact {
+    display:none;
+    background-image: url("art_files/notebook paper.png");
+    font-family: 'Courier New', monospace;
+}
+
+img {width:150px;}
+
+</style>
+
+</head>
+
+
+<body>
+  
+<h1>Coding Experiments</h1>
+
+<div> <!--flex row grid-->
+  
+  <section id="light1">
+    <h3>Things you can do here:</h3>
+    <ul>
+      <li class="playgroundList">Convert temperatures</li>
+      <li class="playgroundList">Change background colors</li>
+      <li><button id="lightButton" onclick="lightsOut()">Turn off the lights!</button></li>
+      <li>Upgrade your language to be Shakespearean</li>
+      <li onmouseover="highlight()">Read a book for Storytime</li>
+      <li>Learn about Salvatore, the Monster of the Week character</li>
+    </ul>
+  <script>
+     document.getElementsByClassName("playgroundlist").addEventListener("mouseover", highlight());
+  </script>
+   <p id="lightfix" onclick="lightsOn()" style="color:linen;"></p>
+  
+   <audio src="art_files/short VERY good soft fold.mp3" id="paper" preload="auto"></audio>
+   <audio src="art_files/lightclick.mp3" id="lightClick" preload="auto"></audio>
+   
+  </section>
+
+<section class="temp">
+  <h3>Temperature Converter</h3>
+<p>Input a temperature in Fahrenheit here to find out the temp in Celsius (rounded to the nearest whole number):</p>
+<input type="text" id="converter" style="width:40px;" oninput="liveFtoC()"> Fahrenheit:
+<p id="answerC" style="font-size:2em;"></p>
+
+</section>
+
+
+<!--This section is for playing with events and text appearance.-->
+ <section id="sal">
+    <h3>Find out about Sal!</h3>
+    
+    <select id="Sal" onchange="salFact()" style="font-size:16px;color:Navy;font-family:monospace;">
+      <option>Choose Fact</option>
+      <option value="sal.Age">How old is he?</option>
+      <option value="sal.Car">What kind of car does he drive?</option>
+      <option value="sal.Work">Where does he work?</option>
+      <option value="sal.Tattoo">Does he have any tattoos?</option>
+       <option value="sal.Face">What does he look like?</option>
+    </select>
+      
+    <div class="paper">
+    <div class="fact" id="sal.Age"><p>Sal is 30 years old.<br></p></div>
+    <div class="fact" id="sal.Car"><p>He drives a Honda Civic and is constantly repairing a Studebaker station wagon.<br></p><img src="art_files/sal-mazda.png"><img src="art_files/sal-lark.jpg"></div>
+    <div class="fact" id="sal.Work"><p>He works at the Grocery Outlet in Forks.<br><img src="art_files/Sal Grocery 2.jpg" alt="Sal stocking eggs drawn in black and white." style="width:280px;"></p></div>
+    <div class="fact" id="sal.Tattoo">Sal has a tattoo over his ribs with a quote from the play <i>Electra</i> by Sophocles.
+    It reads: <i>"Most loyal sister, do you leave me now?"</i><br></div>
+    <div class="fact" id="sal.Face"><img src="art_files/sal screenshot fire.png" style="max-width:290px;"><br>This is Sal.</div>
+    </div>
+
+  </section>
+
+<section class="bgSelector">
+  <h3>Change background color here:</h3>
+  <p>
+    <select id="bgchoice" onchange="changeBG()" style="font-size:20px; color:purple;">
+      <option>Choose Color</option>
+      <option value="Goldenrod">Goldenrod</option>
+      <option value="hotpink">Pink</option>
+      <option value="OliveDrab">Olive</option>
+      <option value="lavender">Back to Normal</option>
+    </select>
+  </p>
+
+  <p style="font-size:.8em;">
+    BG Color Selector Javascript basis from 
+    <a href="https://stackoverflow.com/questions/197748/how-do-i-change-the-
+    background-color-with-javascript">this Stack post.</a>
+  </p>
+
+</section>
+
+<!--storytime revealer-->
+<!--storytime revealer-->
+<!--storytime revealer-->
+<!--storytime revealer-->
+
+ <section id="storytime">
+   <h3>Storytime</h3>
+    <p>Explore the book to hear a story.</p>
+    <div onmousemove="storyGrow()" id="book">
+      <img src="art_files/storybook.jpg" style="min-width:200px;">
+    <br><br><br><br></div>
+    <br><br>
+    <p id="story"></p>
+ </section>
+ 
+ <section>
+   <div class="paper">Hello</div>
+ </section>
+
+<!--ELIZABETHAN LANGUAGE-->
+<section id="forsooth">
+  <h3>Forsooth-ifier</h3>
+<p>
+  Upgrade your writing into Elizabethan fancy: <br>
+  <input type="text" id="shakesInput" oninput="shakes()">
+</p>
+<p id="classy"></p>
+</section>
+
+<section id="tarot">
+  <script src="https://widgets.lauragibbs.net/domains/tarot/tarot300.js" type="text/javascript"></script>
+</section>
+
+<section id="diary" class="text">
+  <h3>Coding Diary</h3>
+    <p>7/28/25: I am banging my head against this highlight-focus thing. I know it should be possible. The problem is,
+    I'm chasing multiple layers. First layer is the list item, which needs an ID. Then those need an Event Listener added
+    (mouseover). Then the mouseover needs to point to a function, which should highlight a section. To do that, the sections
+    each need IDs, too. BUT the trick is: I need the ID of the highlighted list item to also point to which section needs
+    highlighting. It should be something like the BG-Selector, which uses the value of the drop-down item as its color name.<br>
+    So I feel like I should be able to go... highlighted list item --> ID of list item --> ID of section to highlight.</p>
+    <p>EXCEPT I can't use the same ID twice. And if I use the class selector... would that work? Light up anything with that
+    class name? Hmm... Well, I'm taking a break from it for now.</p>
+    <hr>
+    <p>7/27/25: SOUND EFFECTS!!!</p>
+    <hr>
+    <p>7/26/25: Today I got the mouse-movement book to work! I can't figure out how to slow down the text yet.</p>
+    <p>Also added a picture of Sal, which I drew last night.</p>
+    <hr>
+    <p>7/25/25: It is the Week of Javascript. Today I fixed the temp converter and finally made it a text box. 
+    Surprisingly big deal. As soon as I learned to do that, I made the Shakespeare upgrader for fun.
+    </p>
+    <p>
+    Today I also got the drop-down working, and added car images. I want to add drawings.
+    </p>
+    <hr>
+    Current goal is two mini projects:
+    <ol>
+      <li>Hover --> Highlight: making the Playground directory highlight relevant sections.</li>
+      <li><i>DONE!</i>Mouseover --> Reveal: Trying to make a storybook that, when you move your mouse over it,
+      reveals more and more text. I can make it reveal a slice with mouseover, but not gradually.</li>
+    </ol>
+</section>
+
+<!--Vestigial Temp Conversion section. No longer needed, but saving it. -->
+
+<!-- 
+<section>
+  <p>If the temperature in Fahrenheit is 90, then in Celsius it's...</p>
+  <p id="celsius" style="font-size:2em;"></p>
+<script>
+  let temp = toCelsius(90);
+  document.getElementById("celsius").innerHTML = Math.ceil(temp) + " degrees";
+</script>
+</section> 
+-->
+
+</div>
+
+<footer class="footer" style="display:flex;align-self:flex-start">
+  <p><a href="https://radiobud.neocities.org/" style="color:goldenrod;text-shadow:0 0 2px gray">HOME</a></p>
+</footer>
+
+<script>
+  /*
+document.getElementsByClassName("playgroundList").addEventListener = ("mouseover", highlight);
+document.getElementsByClassName("playgroundList").addEventListener = ("mouseleave", lowlight);
+*/
+</script>
+
+</body>
+
+
+</html>
