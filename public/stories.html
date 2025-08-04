@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+body {
+    background: rgb(116, 89, 62);
+    color: rgb(25, 0, 67);
+    font-family: Garamond;
+    font-size: 1em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+aside {
+    background-color:rgb(224, 183, 151);
+    padding: 4rem 1rem;
+    margin: 20px 30px;
+    font-size: 2rem;
+    max-width: 20vw;
+    border: 0px;
+    border-radius: 50px;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.book {
+    background: linen;
+    border: 2px rgb(25,0,67) solid;
+    border-radius: 20px;
+    font-size: 2rem;
+    min-width: 60vw;
+    max-width: 800px;
+    height: 85vh;
+    margin-right:20px;
+    margin-bottom: 20px;
+    padding: 50px 3vw 30px 4vw;
+    overflow: auto;
+    text-align: justify;
+}
+
+li {
+    list-style-type: none;
+}
+
+#frankie {
+    display: none;
+    transition: 2s linear;
+}
+
+li button {
+    background-color: rgb(224, 183, 151);
+    border: none;
+    font-size: 2rem;
+    font-family: inherit;
+    display: block;
+    padding: 20px;
+}
+
+li button:hover {
+    background-color: rgb(172, 220, 211);
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+@media (max-width:40rem) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+    }
+    aside {
+        max-height: 3rem;
+    }
+    li {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-content: center;
+    }
+}
+
+        </style>
+    </head>
+        <body>
+            <div class="container">
+                <aside>
+                    <h3>Stories</h3>
+                    <p style="font-size:1rem;">Click to open a story page.</p>
+                    <ul>
+                        <li><button type="button" onclick="recognized()">Recognized</button></li>
+                        <li><button type="button" onclick="frankie()">Frankie</button></li>
+                    </ul>
+                </aside>
+                <div class="book">
+                <div id="recognized">
+                    <h2>Recognized</h2>
+<p>
+    Sal usually doesn't get recognized at work. Most people who would know him, he thinks, would not shop at the Grocery Outlet. And the job he does is naturally overlooked, uniform and all.</p>
+<p>
+    One day, though, a man in his fifties does a double take beside him while he is stocking quarts of milk in the refrigerators. He says, "Campbell?"</p>
+<p>
+    Sal looks up from the crate and doesn't recognize him. He stands up, quizzical.</p>
+<p>
+   "I'm sorry, you wouldn't remember me - you did a major repair job on my differential a few years back. Saved an antique I thought was totaled."</p>
+<p>
+    Sal places him now. "The Starfire. Yeah."</p>
+<p>
+    "Thank you for that." The man offers his hand, and Sal shakes it.</p>
+<p>
+    "That car was beautiful. How's it driving?"
+</p>
+<p>
+    “Good as ever.” The man pauses, and adds, with awkward wryness, “Even though I don't know a garage I trust with her anymore.”</p>
+<p>
+    Sal lets his eyes wander back to the fridge half-filled with milk, and says, with a gesture that acknowledges his new line of work: “Yeah.”</p>
+<p>
+    “I heard about what happened there. Terrible.”</p>
+<p>
+    Sal crouches next to the crate, goes back to stocking the milk, and nods.</p>
+<p>
+    “I'm guessing that's why you closed down.That was your sister, right? In the animal attack?”</p>
+<p>
+    He freezes. He doesn't look up. He can't lift the jug in his hand.</p>
+                </div>
+
+                <div id="frankie">
+                    <h2>Frankie</h2>
+<p>
+    When he told Frankie about his new job, there was a tense moment when Frankie made a joke about the income change: “So I guess I'm your provider now.” Frankie apologized as soon as he saw Sal's face. </p>
+<p>
+    He tries to explain to Frankie why he likes the job. “It makes me a little tired at the end of the day. I need that. And: I stock eggs, and the shelves are full of eggs; and people go get the eggs to take home. I put out dish soap, and people go buy the dish soap. I can see it happen. I'm making things available for them.” He laughs at himself, softly, but he feels the pride in his chest. “I mean, a robot could do it, one day, but I'm doing it.” He looks up at Frankie, a little defensive, expecting a joke. Frankie slides off his stool, puts a hand around the base of his neck, and kisses him.
+</p>
+                </div>
+
+                </div>
+            </div>
+<script>
+    function recognized() {
+    document.getElementById("recognized").style.display='block';
+    document.getElementById("frankie").style.display='none';
+  }
+  function frankie() {
+    document.getElementById("recognized").style.display='none';
+    document.getElementById("frankie").style.display='block';
+  }
+</script>
+        </body>
+</html>
