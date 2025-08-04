@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotW</title>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+  <style>
+  
+  :root {
+  --color-dark: #00264d;
+  --color-light: linen;
+  
+  --color-text: var(--color-dark);
+  --color-background: var(--color-light);
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    /*font-family: Andale mono, monospace; */
+   /*  font-family: Helvetica, sans-serif; */
+   font-family: "Roboto Condensed", Helvetica, sans-serif;
+    font-size: 1.25rem;
+    transition: background-color 2s ease, color 0.25s;
+  }
+  
+  header {
+    text-align: center;
+  }
+
+   .header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+    font-family: Baskerville, Times, serif;
+    color: #00264d;
+    font-size: 1.25em;
+    background-image: url("/assets/pics/notebook paper.png");
+  }
+  
+  .gridcontainer {
+    display: grid;
+    gap: 1.5rem;
+  }
+    
+  div {
+    border: 1px solid #00264d;
+    box-shadow: 0px 0px 20px pink;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 2s ease, color 0.25s;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+  }
+
+#aup, #ksa {
+    display:none;
+  }
+  
+  p {
+    padding: 0px 10px;
+    text-align: justify;
+  }
+    
+  li {
+    text-align: left;
+    /* padding-left: 20px; */
+  }
+  
+  .long {
+    grid-row: span 3;
+  }
+    
+   .toggle {
+    margin-left:auto;
+    border:none;
+  }
+  
+  .moves-turner {
+    min-height: 50vh;
+  }
+
+  .moves-turner div {
+    min-height: 200px;
+    border: 2px navy ridge;
+    margin: 10px;
+    text-align: left;
+    padding: 30px;
+  }
+
+  .moves-turner li {
+    display: inline;
+    list-style-type: none;
+    margin: auto;
+  }
+
+  .moves-turner button {
+    background: linen;
+    color: navy;
+    font-size: 2em;
+  }
+
+  button {
+    max-height: 2em;
+  }
+
+  .moves-turner button:hover, .moves-turner button:focus {
+    box-shadow: 0 0 10px rgb(66, 62, 65);
+    background: purple;
+    color: linen;
+  }
+  
+  #sun, #moon {
+    background-color: inherit;
+    font-size:2em;
+  }
+  
+   #sun:hover, #moon:hover, #sun:focus, #moon:focus {
+    background-color: hotpink;
+  }
+  
+  .dark-mode {
+  --color-text: var(--color-light);
+  --color-background: var(--color-dark);
+  }
+  
+  .light-mode {
+    background-color: linen;
+    color: black;
+    transition: 2s;
+  }
+  
+  @media (min-width: 50rem) {
+     .gridcontainer {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }}
+  
+   @media (min-width: 70rem) {
+  .gridcontainer {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);}
+  .long {
+    grid-column-start: 3;
+  }
+  }
+  
+  </style>
+  
+
+  <script>
+    
+
+function toggleDark() {
+  page.classList.add("dark-mode");
+  document.getElementById("sun").style.display = "";
+  document.getElementById("moon").style.display = "none";
+  document.getElementsByClassName("header").style.opacity = 0.5;
+}
+
+function toggleLight() {
+  page.classList.remove("dark-mode");
+  document.getElementById("sun").style.display = "none";
+  document.getElementById("moon").style.display = "";
+  
+}
+    
+  </script>
+  
+  </head>
+  <body>
+
+ <header class="header">
+      <h1 id="header name" style="margin-right:auto;margin-left:100px;">Monster Manual</h1>
+      <div class="toggle">
+      <button type="button" id="sun" onclick="toggleLight()" style="display:none;color:linen;">&#9788;</button>
+      <button type="button" id="moon" onclick="toggleDark()">&#9789;</button>
+      </div>
+ </header>
+
+<div class="gridcontainer">
+  
+  <div>
+    <h2>Playbook moves</h2>
+      <ul>
+        <li>Investigate a Mystery</li>
+        <li>Read a Bad Situation</li>
+        <li>Act Under Pressure</li>
+        <li>Manipulate Someone</li>
+        <li>Kick Some Ass</li>
+        <li>Use Magic</li>
+      </ul>
+  </div>
+  
+   <div>
+    <h2>Investigate a Mystery</h2>
+    <p>Investigation always raises interesting questions. One of the most challenging failure
+    conditions to handle, possibly. What happens when Investigate fails?</p>
+  </div>
+  
+  <div class="long">
+    <h2>Using Magic</h2>
+    <p>
+      Use Magic can do intentionally open-ended things. Each table has to define magic's limits for itself.
+      By default, magic lasts about 30 min and has no dangerous side effects, including not drawing
+      attention (unless, perhaps, there's a glitch...).
+    </p>
+    <ul><i>Use Magic Options</i></ul>
+    <li>Inflict harm (1-harm ignore-armour magic obvious).
+    <li>Enchant a weapon. It gets +1 harm and +magic.</li>
+    <li>Do one thing that is beyond human limitations.</li>
+    <li>Bar a place or portal to a specific person or a type of creature.</li>
+    <li>Trap a specific person, minion, or monster.</li>
+    <li>Banish a spirit or curse from the person, object, or place it inhabits.</li>
+    <li>Summon a monster into the world.</li>
+    <li>Communicate with something that you do not share a language with.</li>
+    <li>Observe another place or time.</li>
+    <li>Heal 1-harm from an injury, or cure a disease, or neutralize a poison</li>
+    
+    <ul><i>Glitches</i></ul>
+    <li>The effect is weakened.</li>
+    <li>The effect is of short duration.</li>
+    <li>You take 1-harm ignore-armour magic.</li>
+    <li>The magic draws immediate, unwelcome attention.</li>
+    <li>It has a problematic side effect.</li>
+    
+    <ul><i>Possible requirements</i></ul>
+    <li>Weird materials</li>
+    <li>10 seconds to a minute to cast.</li>
+    <li>Chanting or gestures.</li>
+    <li>Arcane symbols.</li>
+    <li>One or two helpers needed.</li>
+    <li>Reference to a tome of magic.</li>
+    
+    <p><i>Keeper notes:</i></p>
+    <p><i>Extra requirements should depend on the size of the spell.</i></p>
+  </div>
+  <div class="moves-turner">
+    <h2>Read about the moves:</h2>
+    <ul>
+        <li><button type="button" value="rabs" onclick="rabs()">Read a Bad Situation</button></li>
+        <li><button type="button" value="aup" onclick="aup()">Act Under Pressure</button></li>
+        <li><button type="button" value="ksa" onclick="ksa()">Kick Some Ass</button></li>
+    </ul>
+  
+  <div id="rabs">
+    <h2>Read a Bad Situation</h2>
+    <p>When entering a dangerous area, scoping out a lair, or 
+    corroborating the hairs standing up on the back of their neck, Read a Bad Situation
+    helps hunters gather meaningful observations so they can act.</p>
+  </div>
+  
+  <div id="aup">
+    <h2>Act Under Pressure</h2>
+    <p>Is Act the catch-all move? It sure is useful.</p>
+  </div>
+  
+    <div id="ksa">
+    <h2>Kick Some Ass</h2>
+    <p>If harm is likely to be exchanged. If it's high-stakes or an attack from afar, it
+    might just be Act Under Pressure.</p>
+  </div>
+ 
+    </div> <!--moves container-->
+  
+  <div>
+    <h2>When in Doubt</h2>
+    <p>If hunters want to do something not directly laid out in the moves, it's probably
+    going to fall into one of these two catch-alls:</p>
+    <ul>
+      <li>Act Under Pressure, or</li>
+      <li>Use Magic</li>
+    </ul>
+  </div>
+  
+</div>
+
+
+
+<script>
+  const page = document.body;
+
+  function rabs() {
+    document.getElementById("rabs").style.display='block';
+    document.getElementById("aup").style.display='none';
+    document.getElementById("ksa").style.display='none';
+  }
+  function aup() {
+    document.getElementById("rabs").style.display='none';
+    document.getElementById("aup").style.display='block';
+    document.getElementById("ksa").style.display='none';
+  }
+    function ksa() {
+    document.getElementById("rabs").style.display='none';
+    document.getElementById("aup").style.display='none';
+    document.getElementById("ksa").style.display='block';
+  }
+
+</script>
+        </body>
+    </head>
+</html>
