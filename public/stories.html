@@ -17,9 +17,9 @@ body {
 aside {
     background-color:rgb(224, 183, 151);
     padding: 4rem 1rem;
-    margin: 20px 30px;
+    margin: 20px 30px 20px 0;
     font-size: 2rem;
-    max-width: 20vw;
+    width:fit-content;
     border: 0px;
     border-radius: 50px;
     text-align: center;
@@ -76,6 +76,7 @@ p {
     }
     aside {
         max-height: 3rem;
+        display: flex;
     }
     li {
         display: flex;
@@ -90,8 +91,8 @@ p {
         <body>
             <div class="container">
                 <aside>
-                    <h3>Stories</h3>
-                    <p style="font-size:1rem;">Click to open a story page.</p>
+                    <h3 style="margin-bottom:-5px;">Stories</h3>
+                    <p style="font-size:1rem;">Click a tab to open a story page.</p>
                     <ul>
                         <li><button type="button" onclick="recognized()">Recognized</button></li>
                         <li><button type="button" onclick="frankie()">Frankie</button></li>
