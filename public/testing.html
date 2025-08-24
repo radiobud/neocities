@@ -161,7 +161,7 @@ div {
 }
 
 .paper {
-  background-image: url("art_files/notebook paper.png");
+  background-image: url("/assets/pics/notebook paper.png");
 }
 
 #sal {
@@ -195,7 +195,7 @@ transition: background-color 0.25s;
 
 .fact {
     display:none;
-    background-image: url("art_files/notebook paper.png");
+    background-image: url("/assets/art/notebook paper.png");
     font-family: 'Courier New', monospace;
 }
 
@@ -207,6 +207,25 @@ img {width:150px;}
 
 
 <body>
+
+<header class="header">
+  <nav class="header-items">
+    <li class="home"><a href="https://radiobud.neocities.org">Autumnah</a></li>
+    <li><a href="https://radiobud.neocities.org/testing">Boot Camp</a></li>
+    <li><a href="https://radiobud.neocities.org/gridwork">MotW</a></li>
+    <li class="dropdown"><span class="dropbtn">Other Pages</span>
+      <div class="dropdown-content">
+        <nav class="newnav">
+          <li><a href="https://radiobud.neocities.org/thanks.html">Attribution</a></li>
+          <li><a href="https://radiobud.neocities.org/art.html">Art Practice</a></li>
+          <li><a href="https://radiobud.neocities.org/hilton">Hilton</a></li>
+        </navn>
+      </div>
+    </li>
+  </nav>
+</header>
+
+<main>
   
 <h1>Coding Experiments</h1>
 
@@ -227,8 +246,8 @@ img {width:150px;}
   </script>
    <p id="lightfix" onclick="lightsOn()" style="color:linen;"></p>
   
-   <audio src="art_files/short VERY good soft fold.mp3" id="paper" preload="auto"></audio>
-   <audio src="art_files/lightclick.mp3" id="lightClick" preload="auto"></audio>
+   <audio src="/assets/sounds/short VERY good soft fold.mp3" id="paper" preload="auto"></audio>
+   <audio src="/assets/sounds/lightclick.mp3" id="lightClick" preload="auto"></audio>
    
   </section>
 
@@ -256,11 +275,13 @@ img {width:150px;}
       
     <div class="paper">
     <div class="fact" id="sal.Age"><p>Sal is 30 years old.<br></p></div>
-    <div class="fact" id="sal.Car"><p>He drives a Honda Civic and is constantly repairing a Studebaker station wagon.<br></p><img src="art_files/sal-mazda.png"><img src="art_files/sal-lark.jpg"></div>
-    <div class="fact" id="sal.Work"><p>He works at the Grocery Outlet in Forks.<br><img src="art_files/Sal Grocery 2.jpg" alt="Sal stocking eggs drawn in black and white." style="width:280px;"></p></div>
+    <div class="fact" id="sal.Car"><p>He drives a Mazda Familia and is constantly repairing a Studebaker station wagon.<br></p>
+      <img src="/assets/pics/sal-mazda.png"><img src="/assets/pics/sal-lark.jpg"></div>
+    <div class="fact" id="sal.Work"><p>He works at the Grocery Outlet in Forks.<br>
+      <img src="/assets/art/Sal Grocery 2.jpg" alt="Sal stocking eggs drawn in black and white." style="width:280px;"></p></div>
     <div class="fact" id="sal.Tattoo">Sal has a tattoo over his ribs with a quote from the play <i>Electra</i> by Sophocles.
     It reads: <i>"Most loyal sister, do you leave me now?"</i><br></div>
-    <div class="fact" id="sal.Face"><img src="art_files/sal screenshot fire.png" style="max-width:290px;"><br>This is Sal.</div>
+    <div class="fact" id="sal.Face"><img src="/assets/art/sal screenshot fire.png" style="max-width:290px;"><br>This is Sal.</div>
     </div>
 
   </section>
@@ -294,7 +315,7 @@ img {width:150px;}
    <h3>Storytime</h3>
     <p>Explore the book to hear a story.</p>
     <div onmousemove="storyGrow()" id="book">
-      <img src="art_files/storybook.jpg" style="min-width:200px;">
+      <img src="/assets/pics/storybook.jpg" style="min-width:200px;">
     <br><br><br><br></div>
     <br><br>
     <p id="story"></p>
@@ -306,7 +327,7 @@ img {width:150px;}
 
 <!--ELIZABETHAN LANGUAGE-->
 <section id="forsooth">
-  <h3>Forsooth-ifier</h3>
+  <h3>Shakespeare-ifier</h3>
 <p>
   Upgrade your writing into Elizabethan fancy: <br>
   <input type="text" id="shakesInput" oninput="shakes()">
@@ -331,6 +352,10 @@ img {width:150px;}
   </ul>
   <hr>
   <p>7/28/25: I am banging my head against this highlight-focus thing. I know it should be possible. The problem is,
+    <p>8/3/25: Big changes. I moved my repository to github and am updating there or on VS Code. It's been awkward, but
+    now that the main move is done, I think edits will be smoother. Currently, I'm working on some playful page layouts.
+    One of them is <a href="https://radiobud.neocities/org/scroll-test">here.</a></p>
+    <p>7/28/25: I am banging my head against this highlight-focus thing. I know it should be possible. The problem is,
     I'm chasing multiple layers. First layer is the list item, which needs an ID. Then those need an Event Listener added
     (mouseover). Then the mouseover needs to point to a function, which should highlight a section. To do that, the sections
     each need IDs, too. BUT the trick is: I need the ID of the highlighted list item to also point to which section needs
@@ -373,6 +398,8 @@ img {width:150px;}
 -->
 
 </div>
+
+</main>
 
 <footer class="footer" style="display:flex;align-self:flex-start">
   <p><a href="https://radiobud.neocities.org/" style="color:goldenrod;text-shadow:0 0 2px gray">HOME</a></p>

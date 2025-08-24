@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing Grounds!</title>
+    <title>Radiobud Home</title>
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
@@ -30,7 +30,7 @@ document.getElementById('btnClose').style.display='inline';
 }
 
 function closeDoor() {
-document.getElementById('door').src='closed-door.png';
+document.getElementById('door').src='/assets/pics/closed-door.png';
 document.getElementById('btnOpen').style.display='inline';
 document.getElementById('btnClose').style.display='none';
 }
@@ -63,25 +63,23 @@ button {
 <div class="container1"> <!--for the overall header and content, in column mode -->
 
 <header class="header">
-  <ul class="header-items">
-    <li class="home">Autumnah</li>
-    <li>Test2</li>
-    <li>Test3</li>
-    <li class="dropdown"><span class="dropbtn">Navigation</span>
+  <nav class="header-items">
+    <li class="home"><a href="https://radiobud.neocities.org">Autumnah</a></li>
+    <li><a href="https://radiobud.neocities.org/testing">Boot Camp</a></li>
+    <li><a href="https://radiobud.neocities.org/gridwork">MotW</a></li>
+    <li class="dropdown"><span class="dropbtn">Other Pages</span>
       <div class="dropdown-content">
-        <ul class="newnav">
-          <li><a href="https://radiobud.neocities.org/thanks.html">Thanks</a></li>
-          <li><a href="https://radiobud.neocities.org/testing">Boot Camp</a></li>
+        <nav class="newnav">
+          <li><a href="https://radiobud.neocities.org/thanks.html">Attribution</a></li>
           <li><a href="https://radiobud.neocities.org/art.html">Art Practice</a></li>
-          <li><a href="https://64.media.tumblr.com/48ca2be3ee8e70fedc54e0ce3932bd47/tumblr_omnygg7GSS1udnhq9o1_1280.jpg">A home</a></li>
-          <li><a href="https://64.media.tumblr.com/ee3c64d792d633f6c69662b6a8436077/tumblr_obaw4f3cr61r5pkjuo1_1280.jpg">Clouds!</a></li>
           <li><a href="https://radiobud.neocities.org/hilton">Hilton</a></li>
-        </ul>
+        </navn>
       </div>
     </li>
-  </ul>
+  </nav>
 </header>
 
+<main>
 <div class="container3"> <!-- for the main flow of content-->
 
 <h1 class="gradient" style="max-width:fit-content;margin:20px auto">Experiment Log
@@ -131,7 +129,7 @@ button {
   reference only 
   img id="door" src="https://web.archive.org/web/20091027191111im_/http://br.geocities.com/abertura161/g8.gif" style="display:none"
   -->
- <img id="door" src="closed-door.png" style="width:100px"><br>
+ <img id="door" src="/assets/pics/closed-door.png" style="width:100px"><br>
    <button id="btnOpen" type="button" onclick=openDoor()>Open the Door!</button>
    <button id="btnClose" type="button" style="font-weight:bold;color:red;display:none;" onclick=closeDoor()>(Close the door)</button>
  <p> <strong>7/12:</strong> Working on FlexBox. It's satisfying! But I want to make the nav bar on the left expand to full screen width only when it's pushed into a column format. Not finding how to do that yet, without doing a media pull.</p>
@@ -165,6 +163,7 @@ button {
 </div> <!--container3-->
 
 </div> <!--container1-->
+</main>
 
 <footer class="footer" style="display:flex;align-self:flex-start">
   <p><a href="https://radiobud.neocities.org/" style="color:goldenrod;text-shadow:0 0 2px gray">

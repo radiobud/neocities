@@ -38,6 +38,17 @@
   header {
     text-align: center;
   }
+
+   .header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+    font-family: Baskerville, Times, serif;
+    color: #00264d;
+    font-size: 1.25em;
+    background-image: url("/assets/pics/notebook paper.png");
+  }
   
   .gridcontainer {
     display: grid;
@@ -68,18 +79,7 @@
   .long {
     grid-row: span 3;
   }
-  
-  .header {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    align-items: baseline;
-    font-family: Baskerville, Times, serif;
-    color: #00264d;
-    font-size: 1.25em;
-    background-image: url("assets/pics/notebook paper.png");
-  }
-  
+    
    .toggle {
     margin-left:auto;
     border:none;
@@ -136,7 +136,7 @@ function toggleDark() {
   page.classList.add("dark-mode");
   document.getElementById("sun").style.display = "";
   document.getElementById("moon").style.display = "none";
-  document.getElementsByClassName("header").style.opacity = 0.5;
+  document.getElementById('header').style.backgroundBlendMode = "darken";
 }
 
 function toggleLight() {
